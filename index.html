@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Lopy Agency</title>
+<meta name="description" content="Lopy Agency: tráfego pago, social media e identidade visual. Transformamos a verba que sua empresa já investe em anúncio em venda. Ivoti, RS." />
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+/* Layout: leitura de painel de performance. Rótulos mono com "//", numerais grandes, uma única cor de destaque. */
+:root{
+  --ink:#0d1210; --panel:#131a16; --line:#27322c; --paper:#f4eee2; --mute:#9aa59c; --lime:#a8c3ad; --lime-ink:#0d1210;
+  --display:'Bricolage Grotesque','Arial Narrow',Arial,sans-serif; --body:'Instrument Sans',system-ui,sans-serif; --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--ink);color:var(--paper);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased;padding-bottom:84px}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.mono b{color:var(--lime);font-weight:500}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.02em;line-height:1.02}
+h1{font-size:clamp(2.9rem,9vw,6.4rem);font-weight:800}
+h2{font-size:clamp(2rem,5.5vw,3.6rem);font-weight:700}
+h3{font-size:1.5rem;font-weight:700;line-height:1.15}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:0 1.6rem;border-radius:6px;font:600 .95rem var(--body);letter-spacing:.02em;text-decoration:none;border:1px solid var(--paper);background:var(--paper);color:var(--lime-ink);cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);background:#fff}
+.btn.ghost{background:transparent;color:var(--paper);border-color:#3a443e}
+.btn.ghost:hover{border-color:var(--lime);background:transparent;color:var(--lime)}
+
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(13,18,16,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ink)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
+.logo{display:block;text-decoration:none}.logo img{display:block;height:24px;width:auto}
+.logo span{color:var(--lime)}
+nav.main{display:flex;gap:2rem}
+nav.main a{font-size:.9rem;color:var(--mute);text-decoration:none}
+nav.main a:hover{color:var(--paper)}
+.bar .btn{min-height:42px;padding:0 1.1rem;font-size:.85rem}
+
+.hero{padding-block:clamp(3rem,9vw,7rem) clamp(2.5rem,6vw,4.5rem)}
+.hero .grid{display:grid;grid-template-columns:1.5fr 1fr;gap:3rem;align-items:end}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p.lead{max-width:34rem;font-size:1.2rem;color:#cfd6d1;margin:1.6rem 0 2rem}
+.ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+.micro{margin-top:1.2rem}
+.roi{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:1.6rem}
+.roi .big{font:800 clamp(4rem,12vw,7rem)/1 var(--display);color:var(--lime);letter-spacing:-.04em}
+.roi p{margin:.6rem 0 0;color:#cfd6d1}
+
+.ticker{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:1rem 0}
+.ticker div{display:inline-block;animation:slide 40s linear infinite;font:500 .8rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ticker span{margin:0 1.4rem}.ticker i{color:var(--lime);font-style:normal}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{padding-block:clamp(4rem,9vw,7.5rem)}
+.head{display:grid;gap:1rem;margin-bottom:3rem;max-width:46rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.card{background:var(--ink);padding:2rem 1.7rem 2.2rem;display:flex;flex-direction:column;gap:1rem;min-width:0;transition:background .3s}
+.card:hover{background:var(--panel)}
+.card .n{font:800 3rem/1 var(--display);color:var(--lime)}
+.card p{margin:0;color:#b9c2bc;font-size:1rem}
+.card ul{margin:auto 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.4rem}
+.card li{font:500 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:.3rem .6rem;border-radius:99px;color:var(--mute)}
+
+.method{background:var(--panel);border-block:1px solid var(--line)}
+.steps{display:grid;gap:0;border-top:1px solid var(--line)}
+.step{display:grid;grid-template-columns:90px 1fr 1.3fr;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--line);align-items:start}
+.step .n{font:500 .9rem var(--mono);color:var(--lime);padding-top:.5rem}
+.step p{margin:0;color:#b9c2bc}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.stat{border-top:2px solid var(--lime);padding-top:1.2rem}
+.stat .v{font:800 clamp(2.4rem,6vw,4rem)/1.05 var(--display)}
+.stat p{margin:.5rem 0 0;color:var(--mute)}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.about p{color:#cfd6d1;margin:0 0 1.1rem}
+.photo{aspect-ratio:4/5;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:linear-gradient(160deg,#16201a,#0d1210);display:grid;place-items:end start;padding:1.6rem;position:relative}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo .logo{font-size:clamp(2.6rem,8vw,4.6rem);line-height:.95;position:relative}
+.field-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.field-chips span{font:500 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:.4rem .7rem;border-radius:99px;color:var(--mute)}
+
+.contact{background:linear-gradient(180deg,var(--ink),#101812)}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+form{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:1.8rem;display:grid;gap:1rem}
+label{display:block;font-size:.85rem;margin-bottom:.35rem;color:#cfd6d1}
+input,textarea,select{width:100%;min-height:50px;background:#0d1210;color:var(--paper);border:1px solid var(--line);border-radius:6px;padding:.8rem 1rem;font:inherit}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--lime)}
+[aria-invalid="true"]{border-color:#ff8a7a}
+.err{color:#ff9d8f;font-size:.85rem;margin:.3rem 0 0}
+#status{min-height:1.4rem;font-size:.9rem;color:var(--lime)}
+.links{display:grid;gap:.6rem;margin-top:2rem}
+.links a{color:var(--paper)}
+
+footer{border-top:1px solid var(--line);padding-block:2.5rem 3rem;color:var(--mute);font-size:.9rem}
+footer .row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:25;padding:.7rem max(16px,env(safe-area-inset-right,0px)) calc(.7rem + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:rgba(11,13,12,.94);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.sticky .btn{width:100%}
+
+.mgrid{display:grid;grid-template-columns:1.25fr 1fr;gap:3rem;align-items:start}
+figure{margin:0}
+figcaption{font:400 .85rem var(--body);color:var(--mute);margin-top:.7rem}
+.shot{display:block;width:100%;aspect-ratio:4/5;border:1px solid var(--line);border-radius:10px;overflow:hidden;padding:0;background:var(--panel);cursor:zoom-in}
+.shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
+.shot:hover img{transform:scale(1.04)}
+.vrow{display:grid;grid-template-columns:1fr 280px 280px;gap:2rem;align-items:start;margin-bottom:3rem}
+.vrow video{width:100%;aspect-ratio:384/832;border-radius:10px;border:1px solid var(--line);background:#000;display:block}
+.vrow p{color:#cfd6d1;margin:1rem 0 0;max-width:24rem}
+.prints{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;max-width:760px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.tag{font:500 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(5,8,7,.96);display:none;align-items:center;justify-content:center;padding:1rem;flex-direction:column;gap:.8rem}
+#lb.on{display:flex}#lb img{max-width:92vw;max-height:80svh;border-radius:8px;object-fit:contain}
+#lb button{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:12px;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--ink);color:var(--paper);font-size:1.3rem;cursor:pointer}
+#lb .nav{top:50%;right:auto;left:12px}#lb .nav.r{left:auto;right:12px}
+@media (min-width:900px){.sticky{display:none}body{padding-bottom:0}}
+@media (max-width:899px){
+  nav.main{display:none}
+  .hero .grid,.about,.cgrid{grid-template-columns:1fr}
+  .cards,.stats,.mgrid,.vrow{grid-template-columns:1fr}.vrow video{max-width:300px}.gal{grid-template-columns:repeat(2,1fr);gap:.6rem}.prints{gap:.6rem}
+  .step{grid-template-columns:50px 1fr;gap:.6rem 1rem}.step p{grid-column:2}
+  .bar .btn{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker div{animation:none}.btn{transition:none}}
+</style>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#topo" aria-label="Lopy Agency, início"><img src="media/logo.png" alt="Lopy" width="95" height="24"></a>
+    <nav class="main" aria-label="Principal">
+      <a href="#servicos">Serviços</a><a href="#metodo">Método</a><a href="#resultados">Resultados</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+    </nav>
+    <a class="btn" data-cta="header" href="#contato">Falar agora</a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div class="wrap grid">
+      <div>
+        <p class="mono"><b>●</b> Agência de performance // Ivoti, RS</p>
+        <h1 style="margin-top:1.2rem">Tráfego que <em>vira venda.</em></h1>
+        <p class="lead">A Lopy Agency pega a verba que sua empresa já coloca em anúncio e faz ela voltar em venda, buscando o resultado onde ele estiver.</p>
+        <div class="ctas">
+          <a class="btn" data-cta="hero" href="#contato">Iniciar escala agora</a>
+          <a class="btn ghost" href="#metodo">Ver como trabalhamos</a>
+        </div>
+        <p class="mono micro">Resposta no mesmo dia · diagnóstico sem custo</p>
+      </div>
+      <div class="roi" aria-label="Foco em ROI">
+        <p class="mono">Métrica que importa</p>
+        <div class="big">ROI</div>
+        <p>A única métrica que prometemos olhar. Sem métrica de ego.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div id="ticker"></div></div>
+
+  <section id="servicos">
+    <div class="wrap">
+      <div class="head">
+        <p class="mono"><b>01</b> // O que fazemos</p>
+        <h2>Três frentes para vender mais.</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="n">01</span>
+          <h3>Tráfego pago</h3>
+          <p>Verba distribuída com meta de CPA e ROAS definidas antes do primeiro real ser gasto. Conta organizada, estrutura de teste, escala com cabeça.</p>
+          <ul><li>Meta Ads</li><li>Google Ads</li><li>TikTok Ads</li></ul>
+        </article>
+        <article class="card">
+          <span class="n">02</span>
+          <h3>Social media</h3>
+          <p>Perfil e conteúdo alinhados à oferta, para o anúncio levar o cliente a uma marca que sustenta a decisão de compra.</p>
+          <ul><li>Conteúdo</li><li>Presença de marca</li></ul>
+        </article>
+        <article class="card">
+          <span class="n">03</span>
+          <h3>Identidade visual</h3>
+          <p>Marca com cara de empresa séria, consistente em cada ponto de contato, do anúncio ao perfil e ao material impresso.</p>
+          <ul><li>Marca</li><li>Direção visual</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="method" id="metodo">
+    <div class="wrap">
+      <div class="head">
+        <p class="mono"><b>02</b> // Como trabalhamos</p>
+        <h2>Testar, ler o número, escalar o que paga.</h2>
+      </div>
+      <div class="mgrid"><div class="steps">
+        <div class="step"><span class="n">01</span><h3>Mídia de performance</h3><p>Verba distribuída com meta de CPA e ROAS definidas antes do primeiro real ser gasto. Estrutura de teste e escala com cabeça.</p></div>
+        <div class="step"><span class="n">02</span><h3>Leitura de dados</h3><p>Leitura fria das métricas para cortar o que não performa e multiplicar o que performa. Decisão com número, não com opinião.</p></div>
+        <div class="step"><span class="n">03</span><h3>Oferta e criativo</h3><p>Ajuste fino entre a promessa do produto e o criativo que interrompe o scroll. Tráfego bom com oferta fraca só queima verba.</p></div>
+      </div>
+      <figure><button class="shot" data-lb="media/processo-1080.webp" data-cap="Campanha em construção: do caderno ao Google Ads." aria-label="Ampliar foto"><img src="media/processo-640.webp" alt="Notebook com Google Ads aberto e esquema de campanha desenhado no caderno" width="640" height="770" loading="lazy"></button><figcaption>Campanha em construção: do caderno ao Google Ads.</figcaption></figure></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="head">
+        <p class="mono"><b>03</b> // Números</p>
+        <h2>Experiência de operação, não de vitrine.</h2>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="v">4+</div><p>anos de mercado</p></div>
+        <div class="stat"><div class="v">3</div><p>plataformas: Meta Ads, Google Ads e TikTok Ads</p></div>
+        <div class="stat"><div class="v">ROI</div><p>a métrica que orienta cada decisão</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resultados" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <p class="mono"><b>04</b> // Resultados</p>
+        <h2>Quem trabalha com a gente fala por nós.</h2>
+      </div>
+      <div class="vrow">
+        <div><h3>Em áudio, direto do cliente</h3><p>Depoimentos gravados em conversas reais de WhatsApp com clientes atendidos pela Lopy.</p></div>
+        <figure><video controls preload="none" playsinline poster="media/dep-contabilidade-poster.webp" src="media/dep-contabilidade.mp4" aria-label="Depoimento de cliente da área contábil"></video><figcaption>Depoimento · Contabilidade</figcaption></figure>
+        <figure><video controls preload="none" playsinline poster="media/dep-guincho-poster.webp" src="media/dep-guincho.mp4" aria-label="Depoimento de cliente do ramo de guincho"></video><figcaption>Depoimento · Guincho</figcaption></figure>
+      </div>
+      <h3 style="margin-bottom:1.2rem">Por mensagem</h3>
+      <div class="prints">
+        <figure><button class="shot" data-lb="media/dep-weber-1080.webp" data-cap="Arthur Weber: Meta de julho batida no dia 12" aria-label="Ampliar depoimento"><img src="media/dep-weber-640.webp" alt="Conversa de WhatsApp: meta de julho batida no dia 12" width="640" height="770" loading="lazy"></button><figcaption>Arthur Weber · “Meta de julho batida no dia 12”</figcaption></figure>
+        <figure><button class="shot" data-lb="media/dep-taufer-1080.webp" data-cap="Dr. Arthur Taufer, cirurgião-dentista" aria-label="Ampliar depoimento"><img src="media/dep-taufer-640.webp" alt="Conversa de WhatsApp: entregou mais do que o esperado" width="640" height="770" loading="lazy"></button><figcaption>Dr. Arthur Taufer · “Entregou mais do que o esperado!”</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" style="padding-top:0">
+    <div class="wrap about">
+      <div>
+        <p class="mono"><b>05</b> // Quem somos</p>
+        <h2 style="margin:1rem 0 1.6rem">Agência pequena no tamanho, direta no trato.</h2>
+        <p>A Lopy Agency é fundada e liderada por Nícolas Engler, gestor de tráfego, e está em Ivoti, RS. Atuamos com tráfego pago, social media e identidade visual.</p>
+        <p>Performance não é sorte: é disciplina analítica e a coragem de cortar o que não funciona para escalar o que traz lucro real.</p>
+        <p>Você fala com quem executa, não com um relatório bonito que esconde caixa parado.</p>
+      </div>
+      <figure><button class="shot" data-lb="media/campo-gramado-1080.webp" data-cap="Gramado Summit 2026" aria-label="Ampliar foto"><img src="media/campo-gramado-640.webp" alt="Palco do Gramado Summit com público" width="640" height="770" loading="lazy"></button><figcaption>Gramado Summit 2026</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="campo" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <p class="mono"><b>06</b> // No campo</p>
+        <h2>Perto dos clientes e de onde o mercado acontece.</h2>
+      </div>
+      <div class="gal">
+        <figure><button class="shot" data-lb="media/cliente-opcao-1080.webp" data-cap="Vera e Marciel, Opção Contabilidade" aria-label="Ampliar foto"><img src="media/cliente-opcao-640.webp" alt="Equipe Lopy com Vera e Marciel em frente à Opção Contabilidade" width="640" height="770" loading="lazy"></button><figcaption><span class="tag">Cliente</span><br>Vera e Marciel · Opção Contabilidade</figcaption></figure>
+        <figure><button class="shot" data-lb="media/cliente-multi-1080.webp" data-cap="Caleb Telles, Multi+Mais" aria-label="Ampliar foto"><img src="media/cliente-multi-640.webp" alt="Equipe Lopy com Caleb Telles em frente à loja Multi+Mais" width="640" height="770" loading="lazy"></button><figcaption><span class="tag">Cliente</span><br>Caleb Telles · Multi+Mais</figcaption></figure>
+        <figure><button class="shot" data-lb="media/campo-sapiranga-1080.webp" data-cap="Sapiranga Summit" aria-label="Ampliar foto"><img src="media/campo-sapiranga-640.webp" alt="Palco do Sapiranga Summit com painel de LED" width="640" height="770" loading="lazy"></button><figcaption><span class="tag">Evento</span><br>Sapiranga Summit</figcaption></figure>
+        <figure><button class="shot" data-lb="media/campo-flyhub-1080.webp" data-cap="Aniversário da Fly Hub" aria-label="Ampliar foto"><img src="media/campo-flyhub-640.webp" alt="Aniversário da Fly Hub com convidados" width="640" height="770" loading="lazy"></button><figcaption><span class="tag">Evento</span><br>Aniversário da Fly Hub</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <div class="wrap cgrid">
+      <div>
+        <p class="mono"><b>07</b> // Contato</p>
+        <h2 style="margin:1rem 0 1.4rem">Sua escala começa com uma mensagem.</h2>
+        <p style="color:#cfd6d1;max-width:30rem">Cada dia de verba mal distribuída é caixa que não volta. Conte o que você vende e a gente diz, na real, onde está o dinheiro parado na sua conta de anúncio.</p>
+        <div class="links">
+          <a class="btn" data-cta="contato" id="wa-main" href="#">Entrar em contato</a>
+          <a id="ig-link" class="mono" href="#" target="_blank" rel="noopener noreferrer"></a>
+          <p class="mono" style="margin:0">/ Diagnóstico da operação sem custo<br>/ Você fala com quem executa<br>/ Se tráfego não for o gargalo, a gente diz</p>
+        </div>
+      </div>
+
+      <form id="lead" novalidate aria-label="Pedir diagnóstico">
+        <h3>Peça seu diagnóstico</h3>
+        <div><label for="f-nome">Nome</label><input id="f-nome" autocomplete="name" /><p class="err" id="e-nome" hidden></p></div>
+        <div><label for="f-empresa">Empresa e o que vende</label><input id="f-empresa" autocomplete="organization" /><p class="err" id="e-empresa" hidden></p></div>
+        <div><label for="f-verba">Verba mensal em anúncios <span style="color:var(--mute)">(opcional)</span></label>
+          <select id="f-verba"><option value="">Selecione</option><option>Ainda não invisto</option><option>Até R$ 3 mil</option><option>R$ 3 mil a R$ 10 mil</option><option>R$ 10 mil a R$ 30 mil</option><option>Acima de R$ 30 mil</option></select></div>
+        <div><label for="f-tel">WhatsApp</label><input id="f-tel" type="tel" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000" /><p class="err" id="e-tel" hidden></p></div>
+        <div><label for="f-msg">Quer contar mais? <span style="color:var(--mute)">(opcional)</span></label><textarea id="f-msg" maxlength="600"></textarea></div>
+        <div style="position:absolute;left:-9999px" aria-hidden="true"><input id="f-site" tabindex="-1" autocomplete="off" /></div>
+        <button class="btn" type="submit" id="send">Enviar e conversar</button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <span><img src="media/logo.png" alt="Lopy" width="76" height="19" style="height:19px;width:auto;vertical-align:middle;margin-right:.6rem"> © <span id="year"></span> Lopy Agency · <span id="city"></span></span>
+    <span>Fundador: <a id="ig-founder" href="#" target="_blank" rel="noopener noreferrer"></a></span>
+  </div>
+</footer>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Imagem ampliada"><button id="lbx" aria-label="Fechar">&times;</button><button class="nav" id="lbp" aria-label="Anterior">&lsaquo;</button><button class="nav r" id="lbn" aria-label="Próxima">&rsaquo;</button><img alt=""><p class="mono" id="lbc"></p></div>
+<div class="sticky"><a class="btn" data-cta="barra" id="wa-bar" href="#contato">Falar agora</a></div>
+
+<script>
+/* CONFIGURAÇÃO: tudo que precisa ser trocado fica aqui. */
+const CONFIG = {
+  /* WhatsApp internacional, só números (ex.: '5551999999999'). CONFIRMAR: vazio = usa o Instagram como canal. */
+  whatsapp: '',
+  instagram: 'https://www.instagram.com/lopy.agency/', instagramHandle: '@lopy.agency',
+  founderInstagram: 'https://www.instagram.com/eunicolasengler/', founderHandle: '@eunicolasengler',
+  city: 'Ivoti, RS',
+  message: 'Olá! Vim pelo site da Lopy Agency e gostaria de um diagnóstico da minha operação de anúncios.',
+  /* Rastreamento: preencha só quando as contas existirem. Nada dispara enquanto estiver vazio. */
+  tracking: { gtmId: '', metaPixelId: '' }
+};
+const $ = (id) => document.getElementById(id);
+const hasWA = /^\d{12,13}$/.test(CONFIG.whatsapp);
+
+/* UTM preservado na sessão e anexado à mensagem */
+let utm = '';
+try {
+  const p = new URLSearchParams(location.search);
+  const s = ['utm_source','utm_medium','utm_campaign'].map(k => p.get(k)).filter(Boolean).join(' / ');
+  if (s) sessionStorage.setItem('lopy_utm', s);
+  utm = sessionStorage.getItem('lopy_utm') || '';
+} catch (e) {}
+const msg = (extra) => CONFIG.message + (extra ? '\n\n' + extra : '') + (utm ? '\n(origem: ' + utm + ')' : '');
+const waUrl = (text) => 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(text);
+
+function track(name, detail) {
+  const t = CONFIG.tracking;
+  if (!t.gtmId && !t.metaPixelId) return;
+  (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: name }, detail));
+  if (t.metaPixelId && window.fbq) window.fbq('track', 'Lead');
+}
+(function initTracking() {
+  const t = CONFIG.tracking, add = (src) => { const s = document.createElement('script'); s.async = true; s.src = src; document.head.appendChild(s); };
+  window.dataLayer = window.dataLayer || [];
+  if (t.gtmId) { window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' }); add('https://www.googletagmanager.com/gtm.js?id=' + t.gtmId); }
+})();
+
+/* Textos e links vindos da configuração */
+$('year').textContent = new Date().getFullYear();
+$('city').textContent = CONFIG.city;
+$('ig-link').href = CONFIG.instagram; $('ig-link').textContent = CONFIG.instagramHandle;
+$('ig-founder').href = CONFIG.founderInstagram; $('ig-founder').textContent = CONFIG.founderHandle;
+const items = ['Meta Ads','Google Ads','TikTok Ads','Social media','Identidade visual','Leitura de dados','Oferta e criativo'];
+const row = items.map(t => '<span>' + t + '</span><i>//</i>').join('');
+$('ticker').innerHTML = row + row + row + row;
+
+/* CTAs: WhatsApp quando configurado; senão rolam para o formulário */
+document.querySelectorAll('[data-cta]').forEach((a) => {
+  a.addEventListener('click', () => track('cta_click', { place: a.dataset.cta }));
+});
+if (hasWA) {
+  ['wa-main'].forEach(id => { const a = $(id); a.href = waUrl(msg()); a.target = '_blank'; a.rel = 'noopener noreferrer'; a.textContent = 'Conversar pelo WhatsApp'; });
+  const bar = $('wa-bar'); bar.href = waUrl(msg()); bar.target = '_blank'; bar.rel = 'noopener noreferrer'; bar.textContent = 'Falar no WhatsApp';
+} else {
+  $('wa-main').href = CONFIG.instagram; $('wa-main').target = '_blank'; $('wa-main').rel = 'noopener noreferrer'; $('wa-main').textContent = 'Chamar no Instagram';
+}
+
+/* Formulário com validação real */
+function mask(v) {
+  const d = v.replace(/\D/g, '').slice(0, 11);
+  if (d.length <= 2) return d;
+  if (d.length <= 6) return '(' + d.slice(0, 2) + ') ' + d.slice(2);
+  if (d.length <= 10) return '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6);
+  return '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
+}
+$('f-tel').addEventListener('input', (e) => { e.target.value = mask(e.target.value); });
+function setErr(id, text) {
+  const el = $('e-' + id), inp = $('f-' + id);
+  el.hidden = !text; el.textContent = text || '';
+  inp.setAttribute('aria-invalid', text ? 'true' : 'false');
+  if (text) inp.setAttribute('aria-describedby', 'e-' + id); else inp.removeAttribute('aria-describedby');
+  return !!text;
+}
+$('lead').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  if ($('f-site').value) return;
+  const nome = $('f-nome').value.trim(), emp = $('f-empresa').value.trim(), tel = $('f-tel').value.replace(/\D/g, '');
+  const bad = [setErr('nome', nome.length < 2 ? 'Informe seu nome.' : ''), setErr('empresa', emp.length < 2 ? 'Conte o nome da empresa e o que vende.' : ''), setErr('tel', tel.length < 10 || tel.length > 11 ? 'Informe um WhatsApp válido com DDD.' : '')];
+  if (bad.some(Boolean)) { document.querySelector('[aria-invalid="true"]').focus(); return; }
+  const verba = $('f-verba').value, extra = $('f-msg').value.trim();
+  const text = msg(['Nome: ' + nome, 'Empresa: ' + emp, verba ? 'Verba mensal: ' + verba : '', 'WhatsApp: ' + $('f-tel').value, extra ? 'Detalhes: ' + extra : ''].filter(Boolean).join('\n'));
+  track('lead_form', { place: 'formulario' });
+  if (hasWA) {
+    window.open(waUrl(text), '_blank', 'noopener,noreferrer');
+    $('status').textContent = 'Abrimos o WhatsApp com seus dados. Envie a mensagem para concluir.';
+  } else {
+    let copied = false;
+    try { await navigator.clipboard.writeText(text); copied = true; } catch (e) {}
+    $('status').textContent = copied ? 'Copiamos sua mensagem. Abra o Instagram e cole no direct para concluir.' : 'Abra o Instagram e envie seus dados por lá.';
+    window.open(CONFIG.instagram, '_blank', 'noopener,noreferrer');
+  }
+});
+
+/* Lightbox das fotos */
+(function () {
+  const lb = $('lb'), img = lb.querySelector('img'), cap = $('lbc');
+  const nodes = [...document.querySelectorAll('[data-lb]')];
+  let i = 0, last = null;
+  const show = (n) => { i = (n + nodes.length) % nodes.length; img.src = nodes[i].dataset.lb; img.alt = nodes[i].dataset.cap; cap.textContent = nodes[i].dataset.cap; };
+  const open = (n) => { last = document.activeElement; show(n); lb.classList.add('on'); document.body.style.overflow = 'hidden'; $('lbx').focus(); };
+  const close = () => { lb.classList.remove('on'); document.body.style.overflow = ''; if (last) last.focus(); };
+  nodes.forEach((el, n) => el.addEventListener('click', () => open(n)));
+  $('lbx').onclick = close; $('lbp').onclick = () => show(i - 1); $('lbn').onclick = () => show(i + 1);
+  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+  document.addEventListener('keydown', (e) => { if (!lb.classList.contains('on')) return; if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') show(i - 1); if (e.key === 'ArrowRight') show(i + 1); });
+})();
+</script>
+
+</html>
